@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All about HTML</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Intro to HTML</h1>
+<p>Inspired by <a href="https://cs50.harvard.edu/x/2020/tracks/web/">CS50 WebTrack</a></p>
+<p>Thanks to <a href="https://www.w3schools.com/">w3schools</a></p>
+
+<p>HTML is the markup language that the web is built on. It is used to build websites. The latest version is HTML5.
+<br>
+The specification mentions 18 tags. This table contains key information about each one.
+    Any other element will be explained in the paper.</p>
+<br>
+<label for="select">Which HTML element do you want to learn about?</label>
+<select id="select">
+    <option label="blank" disabled selected value></option>
+    <option value="html">html</option>
+    <option value="head">head</option>
+    <option value="title">title</option>
+    <option value="link">link</option>
+    <option value="script">script</option>
+    <option value="body">body</option>
+    <option value="h1">h1</option>
+    <option value="h2">h2</option>
+    <option value="h3">h3</option>
+    <option value="img">img</option>
+    <option value="a">a</option>
+    <option value="div">div</option>
+    <option value="form">form</option>
+    <option value="input">input</option>
+    <option value="p">p</option>
+    <option value="ol">ol</option>
+    <option value="ul">ul</option>
+    <option value="li">li</option>
+</select>
+<table>
+    <tr id="headerRow">
+        <th>tag</th>
+        <th>use</th>
+        <th>code</th>
+        <th>output</th>
+    </tr>
+    <tr id="html">
+        <td class="name">
+            <code>&lt;html&gt;</code>
+        </td>
+        <td class="description">
+            To contain all the other HTML elements
+        </td>
+        <td class="code">
+<pre><code>&lt;html lang="en"&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </td>
+        <td class="output">
+            N/A
+        </td>
+    </tr>
+    <tr id="head">
+        <td class="name">
+            <code>&lt;head&gt;</code>
+        </td>
+        <td class="description">
+            To hold the metadata for the page.
+        </td>
+        <td class="code">
+<pre><code>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;All about HTML&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+        </td>
+        <td class="output">
+            <img src="imgs/html_title.png" alt="title in tab">
+        </td>
+    </tr>
+    <tr id="title">
+        <td class="name">
+            <code>&lt;title&gt;</code>
+        </td>
+        <td class="description">
+            To put a title on a website.
+        </td>
+        <td class="code">
+<pre><code>&lt;head&gt;
+  &lt;title&gt;All about HTML&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+        </td>
+        <td class="output">
+            <img src="imgs/html_title.png" alt="title in tab">
+        </td>
+    </tr>
+    <tr id="link">
+        <td class="name">
+            <code>&lt;link&gt;</code>
+        </td>
+        <td class="description">
+            To link to an external file, such as a stylesheet.
+        </td>
+        <td class="code">
+<pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+        </td>
+        <td class="output">
+            N/A
+        </td>
+    </tr>
+    <tr id="script">
+        <td class="name">
+            <code>&lt;script&gt;</code>
+        </td>
+        <td class="description">
+            To embed a client-side script. Good at the bottom of the body.
+        </td>
+        <td class="code">
+<pre><code>&lt;script src="code.js"&gt;&lt;/script&gt;</code></pre>
+        </td>
+        <td class="output">
+            N/A
+        </td>
+    </tr>
+    <tr id="body">
+        <td class="name">
+            <code>&lt;body&gt;</code>
+        </td>
+        <td class="description">
+            To hold the visible parts of the page.
+        </td>
+        <td class="code">
+<pre><code>&lt;body&gt;
+Hello, world!
+&lt;/body&gt;</code></pre>
+        </td>
+        <td class="output">
+            Hello, world!
+        </td>
+    </tr>
+    <tr id="h1">
+        <td class="name">
+            <code>&lt;h1&gt;</code>
+        </td>
+        <td class="description">
+            The largest header.
+        </td>
+        <td class="code">
+            <pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;</code></pre>
+        </td>
+        <td class="output">
+            <h1>Heading 1</h1>
+        </td>
+    </tr>
+    <tr id="h2">
+        <td class="name">
+            <code>&lt;h2&gt;</code>
+        </td>
+        <td class="description">
+            A large header.
+        </td>
+        <td class="code">
+            <pre><code>&lt;h2&gt;Heading 2&lt;/h2&gt;</code></pre>
+        </td>
+        <td class="output">
+            <h2>Heading 2</h2>
+        </td>
+    </tr>
+    <tr id="h3">
+        <td class="name">
+            <code>&lt;h3&gt;</code>
+        </td>
+        <td class="description">
+            A medium header.
+        </td>
+        <td class="code">
+            <pre><code>&lt;h3&gt;Heading 3&lt;/h3&gt;</code></pre>
+        </td>
+        <td class="output">
+            <h3>Heading 3</h3>
+        </td>
+    </tr>
+    <tr id="img">
+        <td class="name">
+            <code>&lt;img&gt;</code>
+        </td>
+        <td class="description">
+            Used to display images.
+            <p id="emphasis">Doesn't have a close tag.</p>
+        </td>
+        <td class="code">
+<pre><code>&lt;img src="imgs/bunny.png" alt="Bunny" width="150" height="150"&gt;</code></pre>
+        </td>
+        <td class="output">
+            <img class="small_image" src="imgs/bunny.png" alt="Bunny" width="150" height="150">
+        </td>
+    </tr>
+    <tr id="a">
+        <td class="name">
+            <code>&lt;a&gt;</code>
+        </td>
+        <td class="description">
+            An anchor tag. Used for hyperlinks.
+        </td>
+        <td class="code">
+<pre><code>See &lt;a href="https://mantasaddle.co.uk/"&gt;the Manta saddle&lt;/a&gt;</code></pre>
+        </td>
+        <td class="output">
+            See <a href="https://mantasaddle.co.uk/">the Manta saddle</a>
+        </td>
+    </tr>
+    <tr id="div">
+        <td class="name">
+            <code>&lt;div&gt;</code>
+        </td>
+        <td class="description">
+            A container for elements. Useful for applying styles and scripts to specific parts.
+        </td>
+        <td class="code">
+<pre><code>&lt;div class="myDiv"&gt;
+  &lt;h2&gt;Heading in a div&lt;/h2&gt;
+  &lt;p&gt;Text in a div&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </td>
+        <td class="output">
+            <div class="myDiv">
+              <h2>Heading in a div</h2>
+              <p>Text in a div</p>
+            </div>
+        </td>
+    </tr>
+    <tr id="form">
+        <td class="name">
+            <code>&lt;form&gt;</code>
+        </td>
+        <td class="description">
+            A container for inputs.
+        </td>
+        <td class="code">
+<pre><code>&lt;form action="/placeholder.php" method="get"&gt;
+  &lt;label for="favColour"&gt;Favourite colour:&lt;/label&gt;
+  &lt;input type="text" id="favColour" name="favColour"&gt;&lt;br&gt;
+  &lt;label for="favFood"&gt;Favourite food:&lt;/label&gt;
+  &lt;input type="text" id="favFood" name="favFood"&gt;&lt;br&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+        </td>
+        <td class="output">
+            <form action="" id="favForm">
+              <label for="favColour">Favourite colour:</label>
+              <input type="text" id="favColour" name="favColour"><br>
+              <label for="favFood">Favourite food:</label>
+              <input type="text" id="favFood" name="favFood"><br>
+              <input type="submit" value="Submit">
+            </form>
+        </td>
+    </tr>
+    <tr id="input">
+        <td class="name">
+            <code>&lt;input&gt;</code>
+        </td>
+        <td class="description">
+            For input elements, such as text boxes and buttons.
+        </td>
+        <td class="code">
+<pre><code>&lt;label for="firstName"&gt;First name:&lt;/label&gt;
+&lt;input type="text" id="firstName" name="firstName"&gt;</code></pre>
+        </td>
+        <td class="output">
+              <label for="firstName">First name:</label>
+              <input type="text" id="firstName" name="firstName">
+        </td>
+    </tr>
+    <tr id="p">
+        <td class="name">
+            <code>&lt;p&gt;</code>
+        </td>
+        <td class="description">
+            To mark a paragraph.
+        </td>
+        <td class="code">
+        <pre><code>&lt;p&gt;Paragraph text.&lt;/p&gt;</code></pre>
+        </td>
+        <td class="output">
+            <p>Paragraph text.</p>
+        </td>
+    </tr>
+    <tr id="ol">
+        <td class="name">
+            <code>&lt;ol&gt;</code>
+        </td>
+        <td class="description">
+            For an ordered list. It gives numbers.
+        </td>
+        <td class="code">
+            <pre><code>&lt;ol&gt;
+  &lt;li&gt;Bicycles&lt;/li&gt;
+  &lt;li&gt;Nintendo&lt;/li&gt;
+  &lt;li&gt;Running&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        </td>
+        <td class="output">
+            <ol>
+              <li>Bicycles</li>
+              <li>Nintendo</li>
+              <li>Running</li>
+            </ol>
+        </td>
+    </tr>
+    <tr id="ul">
+        <td class="name">
+            <code>&lt;ul&gt;</code>
+        </td>
+        <td class="description">
+            For an unordered list. It gives bullet points.
+        </td>
+        <td class="code">
+            <pre><code>&lt;ul&gt;
+  &lt;li&gt;Bicycles&lt;/li&gt;
+  &lt;li&gt;Nintendo&lt;/li&gt;
+  &lt;li&gt;Running&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </td>
+        <td class="output">
+            <ul>
+                <li>Bicycles</li>
+                <li>Nintendo</li>
+                <li>Running</li>
+            </ul>
+
+        </td>
+    </tr>
+    <tr id="li">
+        <td class="name">
+            <code>&lt;li&gt;</code>
+        </td>
+        <td class="description">
+            For each item in your list.
+        </td>
+        <td class="code">
+            <pre><code>&lt;ol&gt;
+  &lt;li&gt;Bicycles&lt;/li&gt;
+  &lt;li&gt;Nintendo&lt;/li&gt;
+  &lt;li&gt;Running&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        </td>
+        <td class="output">
+            <ol>
+              <li>Bicycles</li>
+              <li>Nintendo</li>
+              <li>Running</li>
+            </ol>
+        </td>
+    </tr>
+
+</table>
+<br>
+<button id="showAll">Show All</button>
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="html.html">HTML</a>
+        <a class="nav-link" href="css.html">CSS</a>
+        <a class="nav-link" href="javascript.html">JavaScript</a>
+    </nav>
+</div>
+
+<script src="code.js"></script>
+</body>
+</html>
+

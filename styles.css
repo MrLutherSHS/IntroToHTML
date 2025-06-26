@@ -1,0 +1,39 @@
+@import "bootstrap.min.css";
+
+table{
+    border-collapse: collapse;
+    min-width: 500px;
+    max-width: 1000px;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+td, th{
+    border-width: 1px;
+    border-color: black;
+    border-style: groove;
+    padding: 5px;
+}
+
+th{
+    background-color: lightblue;
+}
+
+.name, th{
+    text-align: center;
+}
+
+.small_image{
+    height: 100px;
+    width: 100px;
+}
+
+.menu{
+
+}
+
+#emphasis{
+    font-style: italic;
+}
