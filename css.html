@@ -11,34 +11,309 @@
 <p>Thanks to <a href="https://www.w3schools.com/">w3schools</a></p>
 
 <p>CSS (Cascading Style Sheets) is used to describe the style of how HTML should be displayed.<br>
+    Selectors are how you identify what you want to apply the CSS to — for example, all <code>p</code> tags,
+    tags with a certain class attribute, or individual tags identified with the <code>id</code> attribute.</p>
+<br>
 
-    Selectors are how you identify what you want to apply the CSS to. This can be to for example all p tags, tags with a certain class attribute, or individual tags that you identify with the id attribute.</p>
-    <br>
-    <br>
-    You need to know:
-    <ul>
-    <li>Selectors</li>
-    <ul>
-        <li>How to use inline styles</li>
-        <li>How to use classes</li>
-        <li>How to use idenifiers</li>
-    </ul>
-    <li>Properties</li>
-    <ul>
-        <li>background-color</li>
-        <li>border-color</li>
-        <li>border-style</li>
-        <li>border-width</li>
-        <li>color - with names and hex</li>
-        <li>font-family</li>
-        <li>font-size</li>
-        <li>height</li>
-        <li>width</li>
-    </ul>
-    </ul>
-    <br>
-    <p>Any other properties will be explained in the paper.</p>
+<label for="select">Which CSS topic do you want to learn about?</label>
+<select id="select">
+    <option label="blank" disabled selected value></option>
+    <optgroup label="Selectors">
+        <option value="inline">Inline styles</option>
+        <option value="classes">Classes</option>
+        <option value="identifiers">Identifiers (id)</option>
+    </optgroup>
+    <optgroup label="Properties">
+        <option value="background-color">background-color</option>
+        <option value="border-color">border-color</option>
+        <option value="border-style">border-style</option>
+        <option value="border-width">border-width</option>
+        <option value="color">color</option>
+        <option value="font-family">font-family</option>
+        <option value="font-size">font-size</option>
+        <option value="height">height</option>
+        <option value="width">width</option>
+    </optgroup>
+</select>
 
+<table>
+    <tr id="headerRow">
+        <th>topic</th>
+        <th>description</th>
+        <th>code</th>
+        <th>output</th>
+    </tr>
+
+    <!-- SELECTORS -->
+
+    <tr id="inline">
+        <td class="name">Inline styles</td>
+        <td class="description">
+            Apply CSS directly to an element using the <code>style</code> attribute.
+            Highest specificity but hardest to maintain — avoid for large projects.
+        </td>
+        <td class="code">
+<pre><code>&lt;p style="color: red; font-size: 20px;"&gt;
+  Hello!
+&lt;/p&gt;</code></pre>
+        </td>
+        <td class="output">
+            <p style="color: red; font-size: 20px;">Hello!</p>
+        </td>
+    </tr>
+
+    <tr id="classes">
+        <td class="name">Classes</td>
+        <td class="description">
+            Define a reusable style in CSS using <code>.className</code>, then apply it with the <code>class</code> attribute.
+            The same class can be assigned to many elements.
+        </td>
+        <td class="code">
+<pre><code>/* In your CSS file */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+&lt;!-- In your HTML --&gt;
+&lt;p class="highlight"&gt;Important text&lt;/p&gt;
+&lt;p class="highlight"&gt;Also important&lt;/p&gt;</code></pre>
+        </td>
+        <td class="output">
+            <style>.demo-highlight { background-color: yellow; font-weight: bold; }</style>
+            <p class="demo-highlight">Important text</p>
+            <p class="demo-highlight">Also important</p>
+        </td>
+    </tr>
+
+    <tr id="identifiers">
+        <td class="name">Identifiers (id)</td>
+        <td class="description">
+            Apply a style to one unique element using <code>#idName</code> in CSS and <code>id="idName"</code> in HTML.
+            Only one element can have a given <code>id</code>.
+        </td>
+        <td class="code">
+<pre><code>/* In your CSS file */
+#mainTitle {
+  color: darkblue;
+  text-decoration: underline;
+}
+
+&lt;!-- In your HTML --&gt;
+&lt;h2 id="mainTitle"&gt;My Title&lt;/h2&gt;</code></pre>
+        </td>
+        <td class="output">
+            <style>#demo-mainTitle { color: darkblue; text-decoration: underline; }</style>
+            <h2 id="demo-mainTitle">My Title</h2>
+        </td>
+    </tr>
+
+    <!-- PROPERTIES -->
+
+    <tr id="background-color">
+        <td class="name"><code>background-color</code></td>
+        <td class="description">
+            Sets the background colour of an element. Note the American spelling — <code>background-color</code> not <code>background-colour</code>. Accepts colour names, hex codes, or <code>rgb()</code> values.
+        </td>
+        <td class="code">
+<pre><code>p {
+  background-color: lightgreen;
+}
+
+p {
+  background-color: #ffa500;
+}</code></pre>
+        </td>
+        <td class="output">
+            <p style="background-color: lightgreen; padding: 4px;">Green background</p>
+            <p style="background-color: #ffa500; padding: 4px;">Hex orange background</p>
+        </td>
+    </tr>
+
+    <tr id="border-color">
+        <td class="name"><code>border-color</code></td>
+        <td class="description">
+            Sets the colour of an element's border. Requires <code>border-style</code> to also be set, otherwise the border won't show.
+        </td>
+        <td class="code">
+<pre><code>p {
+  border-style: solid;
+  border-color: red;
+}</code></pre>
+        </td>
+        <td class="output">
+            <p style="border-style: solid; border-color: red; padding: 4px; display: inline-block;">Red border</p>
+        </td>
+    </tr>
+
+    <tr id="border-style">
+        <td class="name"><code>border-style</code></td>
+        <td class="description">
+            Sets the style of the border. Common values: <code>solid</code>, <code>dashed</code>, <code>dotted</code>, <code>double</code>, <code>none</code>.
+        </td>
+        <td class="code">
+<pre><code>p {
+  border-style: solid;
+}
+p {
+  border-style: dashed;
+}
+p {
+  border-style: dotted;
+}</code></pre>
+        </td>
+        <td class="output">
+            <p style="border-style: solid; border-width: 2px; padding: 4px; margin-bottom: 4px; display: block;">Solid</p>
+            <p style="border-style: dashed; border-width: 2px; padding: 4px; margin-bottom: 4px; display: block;">Dashed</p>
+            <p style="border-style: dotted; border-width: 2px; padding: 4px; display: block;">Dotted</p>
+        </td>
+    </tr>
+
+    <tr id="border-width">
+        <td class="name"><code>border-width</code></td>
+        <td class="description">
+            Sets how thick the border is. Can use pixels (<code>px</code>), or keywords like <code>thin</code>, <code>medium</code>, <code>thick</code>.
+        </td>
+        <td class="code">
+<pre><code>p {
+  border-style: solid;
+  border-width: 1px;
+}
+p {
+  border-style: solid;
+  border-width: 5px;
+}
+p {
+  border-style: solid;
+  border-width: thick;
+}</code></pre>
+        </td>
+        <td class="output">
+            <p style="border-style: solid; border-width: 1px; padding: 4px; margin-bottom: 4px; display: block;">1px</p>
+            <p style="border-style: solid; border-width: 5px; padding: 4px; margin-bottom: 4px; display: block;">5px</p>
+            <p style="border-style: solid; border-width: thick; padding: 4px; display: block;">thick</p>
+        </td>
+    </tr>
+
+    <tr id="color">
+        <td class="name"><code>color</code></td>
+        <td class="description">
+            Sets the foreground (text) colour. Note the American spelling — <code>color</code> not <code>colour</code> — as with all CSS properties.
+            Accepts colour names (e.g. <code>red</code>) or hex codes (e.g. <code>#ff0000</code>).
+        </td>
+        <td class="code">
+<pre><code>/* Using a colour name */
+p {
+  color: blue;
+}
+
+/* Using a hex code */
+p {
+  color: #ff0000;
+}</code></pre>
+        </td>
+        <td class="output">
+            <p style="color: blue;">Blue text (colour name)</p>
+            <p style="color: #ff0000;">Red text (hex #ff0000)</p>
+        </td>
+    </tr>
+
+    <tr id="font-family">
+        <td class="name"><code>font-family</code></td>
+        <td class="description">
+            Sets the typeface. List fallbacks separated by commas — the browser uses the first available font.
+            Generic families like <code>serif</code>, <code>sans-serif</code>, <code>monospace</code> should go last.
+        </td>
+        <td class="code">
+<pre><code>p {
+  font-family: Georgia, serif;
+}
+p {
+  font-family: Arial, sans-serif;
+}
+p {
+  font-family: "Courier New", monospace;
+}</code></pre>
+        </td>
+        <td class="output">
+            <p style="font-family: Georgia, serif;">Georgia (serif)</p>
+            <p style="font-family: Arial, sans-serif;">Arial (sans-serif)</p>
+            <p style="font-family: 'Courier New', monospace;">Courier New (monospace)</p>
+        </td>
+    </tr>
+
+    <tr id="font-size">
+        <td class="name"><code>font-size</code></td>
+        <td class="description">
+            Sets how large the text is. The most common unit is <code>px</code> (pixels). <code>16px</code> is the typical browser default.
+        </td>
+        <td class="code">
+<pre><code>p {
+  font-size: 12px;
+}
+p {
+  font-size: 20px;
+}
+p {
+  font-size: 32px;
+}</code></pre>
+        </td>
+        <td class="output">
+            <p style="font-size: 12px;">12px — small text</p>
+            <p style="font-size: 20px;">20px — larger text</p>
+            <p style="font-size: 32px;">32px — large text</p>
+        </td>
+    </tr>
+
+    <tr id="height">
+        <td class="name"><code>height</code></td>
+        <td class="description">
+            Sets the height of an element. Works well on block elements or elements with a defined size like images.
+            Can use <code>px</code>, <code>%</code>, or <code>auto</code>.
+        </td>
+        <td class="code">
+<pre><code>div {
+  height: 60px;
+  background-color: lightblue;
+}
+
+div {
+  height: 120px;
+  background-color: lightyellow;
+}</code></pre>
+        </td>
+        <td class="output">
+            <div style="height: 60px; background-color: lightblue; margin-bottom: 6px; display: flex; align-items: center; padding: 0 6px;">height: 60px</div>
+            <div style="height: 120px; background-color: lightyellow; display: flex; align-items: center; padding: 0 6px;">height: 120px</div>
+        </td>
+    </tr>
+
+    <tr id="width">
+        <td class="name"><code>width</code></td>
+        <td class="description">
+            Sets the width of an element. Can use <code>px</code> for a fixed width or <code>%</code> to be
+            relative to the parent container.
+        </td>
+        <td class="code">
+<pre><code>div {
+  width: 150px;
+  background-color: lightcoral;
+}
+
+div {
+  width: 75%;
+  background-color: lightgreen;
+}</code></pre>
+        </td>
+        <td class="output">
+            <div style="width: 150px; background-color: lightcoral; padding: 4px; margin-bottom: 6px;">150px wide</div>
+            <div style="width: 75%; background-color: lightgreen; padding: 4px;">75% wide</div>
+        </td>
+    </tr>
+
+</table>
+<br>
+<button id="showAll">Show All</button>
 
 <div class="container">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -49,6 +324,6 @@
     </nav>
 </div>
 
+<script src="code.js"></script>
 </body>
 </html>
-
