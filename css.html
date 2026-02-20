@@ -10,10 +10,49 @@
 <p>Inspired by <a href="https://cs50.harvard.edu/x/2020/tracks/web/">CS50 WebTrack</a></p>
 <p>Thanks to <a href="https://www.w3schools.com/">w3schools</a></p>
 
-<p>CSS (Cascading Style Sheets) is used to describe the style of how HTML should be displayed.<br>
-    Selectors are how you identify what you want to apply the CSS to — for example, all <code>p</code> tags,
-    tags with a certain class attribute, or individual tags identified with the <code>id</code> attribute.</p>
+<p>
+    <strong>CSS (Cascading Style Sheets)</strong> defines the <strong>style, appearance, and formatting</strong> of websites.
+    It gives a <strong>consistent look</strong> to every page on a site.
+</p>
+<p>
+    CSS can be written as <strong>inline styles</strong> directly in your HTML, or stored in an
+    <strong>external file</strong> (e.g. <code>styles.css</code>) and linked to it. Both approaches have trade-offs.
+</p>
+
+<table style="max-width: 800px; margin-bottom: 1em;">
+    <tr>
+        <th></th>
+        <th>External CSS file</th>
+        <th>Inline styles</th>
+    </tr>
+    <tr>
+        <td><strong>Consistency</strong></td>
+        <td>Changes affect the <strong>whole site at once</strong>, ensuring a consistent look.</td>
+        <td>Hard to keep a consistent look — changes must be made <strong>on every page</strong>.</td>
+    </tr>
+    <tr>
+        <td><strong>Maintenance</strong></td>
+        <td><strong>Content and formatting are separate</strong>, making code easier to read and update.</td>
+        <td>Formatting is mixed in with content, which can get messy on large pages.</td>
+    </tr>
+    <tr>
+        <td><strong>Performance</strong></td>
+        <td>The stylesheet is <strong>cached by the browser</strong>, so subsequent pages load faster.</td>
+        <td>Formatting is reloaded with <strong>every page</strong>, which can slow the site down.</td>
+    </tr>
+    <tr>
+        <td><strong>Flexibility</strong></td>
+        <td>Stylesheets can be swapped for <strong>different themes or devices</strong> (e.g. mobile).</td>
+        <td>Useful for <strong>quick, one-off changes</strong> to a single element without touching a stylesheet.</td>
+    </tr>
+</table>
+
+<p>
+    <strong>Selectors</strong> are how you identify which elements to apply CSS to — for example, all <code>&lt;p&gt;</code> tags,
+    elements with a certain <strong>class</strong> attribute, or a single element identified by its <strong>id</strong>.
+</p>
 <br>
+
 
 <label for="select">Which CSS topic do you want to learn about?</label>
 <select id="select">
@@ -36,7 +75,7 @@
     </optgroup>
 </select>
 
-<table>
+<table id="referenceTable">
     <tr id="headerRow">
         <th>topic</th>
         <th>description</th>

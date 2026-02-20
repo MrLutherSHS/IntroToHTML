@@ -1,6 +1,6 @@
 function showAll() {
     // Set the given element to display
-    var elements = document.querySelectorAll('tr');
+    var elements = document.querySelectorAll('#referenceTable tr');
     for (var i = 0; i < elements.length; i++) {
         show(elements[i]);
     }
@@ -20,7 +20,7 @@ function hide(element) {
 
 function showSpecific(value){
     // Iterate through the elements and look for a specific value. Hide the others.
-    var elements = document.querySelectorAll('tr');
+    var elements = document.querySelectorAll('#referenceTable tr');
     for (var i = 0; i < elements.length; i++)
     {
         // Skip the header row

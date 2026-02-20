@@ -10,12 +10,278 @@
 <p>Inspired by <a href="https://cs50.harvard.edu/x/2020/tracks/web/">CS50 WebTrack</a></p>
 <p>Thanks to <a href="https://www.w3schools.com/">w3schools</a></p>
 
-According to the OCR mark scheme:
-<blockquote>
-JavaScript is a programming language that runs in a web browser that can be embedded into HTML with <code>&lt;script&gt;</code> tag to add interactivity to a page.</blockquote>
+<p>
+    <strong>JavaScript</strong> is a <strong>programming language that runs in a web browser</strong>.
+    It can be <strong>embedded into HTML</strong> using the <code>&lt;script&gt;</code> tag to
+    <strong>add interactivity</strong> to a page — for example, showing or hiding content when a user makes a selection,
+    or validating a form before it is submitted.
+</p>
 
-You need to learn how to follow and write basic JavaScript code. You don't need to memorise exact syntax and can make minor mistakes.
-You should know how the basic structures work. You don't need to know about JS OOP or file handling.
+<p>
+    JavaScript is an <strong>interpreted</strong> language, not a compiled one. Compiled code is
+    <strong>machine dependent</strong> — it must be recompiled for different processors or architectures.
+    An <strong>interpreter</strong> runs the high-level source code directly, making it
+    <strong>machine independent</strong>. This matters for JavaScript because it is likely to run on
+    a wide variety of devices with different hardware.
+</p>
+
+<table style="max-width: 800px; margin-bottom: 1em;">
+    <tr>
+        <th>Compiled</th>
+        <th>Interpreted (JavaScript)</th>
+    </tr>
+    <tr>
+        <td>Translated into machine code before running.</td>
+        <td>Translated and run <strong>line by line</strong> at runtime.</td>
+    </tr>
+    <tr>
+        <td>Fast to execute once compiled.</td>
+        <td>Slightly slower to execute.</td>
+    </tr>
+    <tr>
+        <td><strong>Machine dependent</strong> — compiled code only works on the target architecture.</td>
+        <td><strong>Machine independent</strong> — the same code runs on any device with a browser.</td>
+    </tr>
+    <tr>
+        <td>Errors found at compile time.</td>
+        <td>Errors found at runtime.</td>
+    </tr>
+</table>
+
+<h2>What the exam expects</h2>
+<p>
+    You are expected to be able to <strong>follow and write basic JavaScript code</strong>. You do not need to memorise
+    exact syntax — the exam will not penalise minor inaccuracies. You should understand the JavaScript equivalents
+    of standard pseudocode structures (see the table below).
+</p>
+<p>You will <strong>not</strong> be expected to use JavaScript for object-oriented programming or file handling.</p>
+
+<h2>Output methods</h2>
+<p>There are three ways JavaScript can produce output that you need to know:</p>
+
+<table style="max-width: 800px; margin-bottom: 1em;">
+    <tr>
+        <th>Method</th>
+        <th>Code</th>
+        <th>Effect</th>
+    </tr>
+    <tr>
+        <td>Change an HTML element</td>
+        <td>
+<pre><code>var el = document.getElementById("example");
+el.innerHTML = "Hello World";</code></pre>
+        </td>
+        <td>Updates the content of an element on the page. Most commonly used in exam questions.</td>
+    </tr>
+    <tr>
+        <td>Write to the document</td>
+        <td><pre><code>document.write("Hello World");</code></pre></td>
+        <td>Writes directly into the HTML page.</td>
+    </tr>
+    <tr>
+        <td>Alert box</td>
+        <td><pre><code>alert("Hello World");</code></pre></td>
+        <td>Shows a pop-up message box in the browser.</td>
+    </tr>
+</table>
+
+<p>
+    <strong>Input</strong> is taken by reading values from a form:
+    <code>document.getElementById("fieldId").value</code>.
+    You do not need to memorise this — exam questions will focus on what you do with the input once received.
+</p>
+
+<h2>JavaScript structures</h2>
+
+<label for="select">Which JavaScript structure do you want to learn about?</label>
+<select id="select">
+    <option label="blank" disabled selected value></option>
+    <option value="gebi">document.getElementById()</option>
+    <option value="variables">Variables / assignment</option>
+    <option value="if">if / else if / else</option>
+    <option value="for">for loop</option>
+    <option value="while">while loop</option>
+    <option value="functions">Functions</option>
+    <option value="arrays">Arrays</option>
+</select>
+
+<table id="referenceTable">
+    <tr id="headerRow">
+        <th>structure</th>
+        <th>description</th>
+        <th>code example</th>
+    </tr>
+
+    <tr id="gebi">
+        <td class="name"><code>document.getElementById()</code></td>
+        <td class="description">
+            The key to linking JavaScript to your HTML. Given an element's <strong>id</strong>, it returns that
+            element as an object so JavaScript can read or change it.
+            <br><br>
+            Use <code>.innerHTML</code> to <strong>read or change the content</strong> of an element.<br>
+            Use <code>.value</code> to <strong>read input from a form field</strong>.<br>
+            <br>
+            This is how JavaScript interacts with the <strong>DOM (Document Object Model)</strong> —
+            the browser's representation of the HTML page as objects that can be manipulated with code.
+        </td>
+        <td class="code">
+<pre><code>// Changing the content of an element
+document.getElementById("output").innerHTML = "Hello!";
+
+// Reading a value from a form field
+var username = document.getElementById("nameInput").value;
+
+// Storing the element in a variable first (cleaner for reuse)
+var el = document.getElementById("output");
+el.innerHTML = "Hello, " + username;</code></pre>
+        </td>
+    </tr>
+
+    <tr id="variables">
+        <td class="name">Variables / assignment</td>
+        <td class="description">
+            Declare a variable with <code>var</code> or <code>let</code> and assign it a value with <code>=</code>.
+            Variables can hold numbers, strings, or booleans. You can change the value later by assigning again.
+        </td>
+        <td class="code">
+<pre><code>var age = 16;
+var name = "Alice";
+let passed = true;
+
+// Reassigning a variable
+age = 17;</code></pre>
+        </td>
+    </tr>
+
+    <tr id="if">
+        <td class="name">if / else if / else</td>
+        <td class="description">
+            Runs different blocks of code depending on a condition.
+            Use <code>==</code> to compare values, <code>&amp;&amp;</code> for AND, <code>||</code> for OR,
+            and <code>!=</code> for not equal.
+            Only the first true branch runs.
+        </td>
+        <td class="code">
+<pre><code>var score = 72;
+
+if (score >= 70)
+{
+    document.getElementById("result").innerHTML = "Distinction";
+}
+else if (score >= 50)
+{
+    document.getElementById("result").innerHTML = "Pass";
+}
+else
+{
+    document.getElementById("result").innerHTML = "Fail";
+}</code></pre>
+        </td>
+    </tr>
+
+    <tr id="for">
+        <td class="name">for loop</td>
+        <td class="description">
+            Repeats a block of code a set number of times. The loop has three parts:
+            a starting value, a condition to keep looping, and an update step.
+            Use when you know in advance how many times to loop.
+        </td>
+        <td class="code">
+<pre><code>// Counts from 1 to 5
+for (var i = 1; i <= 5; i++)
+{
+    document.write(i + "&lt;br&gt;");
+}
+
+// Looping through an array
+var fruits = ["apple", "banana", "cherry"];
+for (var i = 0; i < fruits.length; i++)
+{
+    document.write(fruits[i] + "&lt;br&gt;");
+}</code></pre>
+        </td>
+    </tr>
+
+    <tr id="while">
+        <td class="name">while loop</td>
+        <td class="description">
+            Repeats a block of code <strong>while</strong> a condition is true.
+            Use when you don't know in advance how many times to loop.
+            Make sure the condition can eventually become false, or the loop will run forever.
+        </td>
+        <td class="code">
+<pre><code>var count = 1;
+
+while (count <= 5)
+{
+    document.write(count + "&lt;br&gt;");
+    count = count + 1;
+}</code></pre>
+        </td>
+    </tr>
+
+    <tr id="functions">
+        <td class="name">Functions</td>
+        <td class="description">
+            A named, reusable block of code. Define it with <code>function</code>, then call it by name.
+            Functions can take <strong>parameters</strong> (inputs) and <strong>return</strong> a value.
+            In exam questions, you are often asked to complete a partially written function.
+        </td>
+        <td class="code">
+<pre><code>// A function that returns a value
+function calculateTotal(price, quantity)
+{
+    var total = price * quantity;
+    return total;
+}
+
+// Calling the function and using the result
+var result = calculateTotal(5.99, 3);
+document.getElementById("output").innerHTML = result;
+
+
+// A function that changes the page directly (no return needed)
+function showGreeting(name)
+{
+    document.getElementById("msg").innerHTML = "Hello, " + name;
+}
+
+showGreeting("Alice");</code></pre>
+        </td>
+    </tr>
+
+    <tr id="arrays">
+        <td class="name">Arrays</td>
+        <td class="description">
+            An array stores multiple values in a single variable.
+            Items are accessed by their <strong>index</strong>, starting at <code>0</code>.
+            Use <code>.length</code> to find how many items are in the array.
+            Arrays are often used with a <code>for</code> loop to process each item.
+        </td>
+        <td class="code">
+<pre><code>var colours = ["red", "green", "blue"];
+
+// Accessing items by index (starts at 0)
+document.write(colours[0]);  // red
+document.write(colours[2]);  // blue
+
+// Finding the length
+document.write(colours.length);  // 3
+
+// Changing an item
+colours[1] = "yellow";
+
+// Looping through an array
+for (var i = 0; i < colours.length; i++)
+{
+    document.write(colours[i] + "&lt;br&gt;");
+}</code></pre>
+        </td>
+    </tr>
+
+</table>
+<br>
+<button id="showAll">Show All</button>
 
 <div class="container">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -26,5 +292,6 @@ You should know how the basic structures work. You don't need to know about JS O
     </nav>
 </div>
 
+<script src="code.js"></script>
 </body>
 </html>
